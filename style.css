@@ -14,6 +14,12 @@
 .battleground {
     display: grid;
     grid-template-rows: 1fr 6fr 1fr;
+    
+}
+
+.tableboard div{
+    border: black 1px solid;
+    
 }
 
 .battleground .tableboard {
