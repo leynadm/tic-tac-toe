@@ -21,8 +21,8 @@ var gameBoard = {
         this.cacheDom().playerOneInput.addEventListener('keyup',this.getPlayerName);
     },
 
-    render: function(){
-
+    render: function(squareSelected,playerInput){
+        gameBoard.cacheDom().boardSquares[squareSelected].textContent = playerInput;
     },
 
     addPlayerInput: function(){
@@ -43,10 +43,10 @@ var gameBoard = {
             gameBoard.playerOneTurn = true;
         }
 
-        gameBoard.gameState[squareSelected] = XorO;        
-        console.log(gameBoard.gameState[squareSelected])
-        gameBoard.cacheDom().boardSquares[squareSelected].textContent = XorO;
+        gameBoard.gameState[squareSelected] = XorO;
+        let playerInput = XorO;
 
+        gameBoard.render(squareSelected,playerInput);
     },
 
     getPlayerName: function(){

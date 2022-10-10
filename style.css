@@ -18,8 +18,11 @@
 }
 
 .tableboard div{
+    display: flex;
     border: black 1px solid;
-    
+    align-items: center;
+    justify-content: center;
+    font-size: 10rem;
 }
 
 .battleground .tableboard {
