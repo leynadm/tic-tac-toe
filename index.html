@@ -11,17 +11,28 @@
 <body>
     <div class="container">
         
-        <div class="team-one-selection">
+        <div class="team-selection">
 
             <div class="player-div">
-                <input type="text" class="player-name player-one">
+                <label for="player-one-name">Player 1 Name:</label>
+                <input type="text" class="player-name player-one" id="player-one-name">
             </div>
 
+            <div class="hero-chosen hero-player-one">
+                <img src="" alt="" class="player-one-hero-spot">
+            </div>
+            
+            <div class="team-images">
+                <img src="img/dbz-goku.jpeg" alt="" class="hero dbz-hero">
+                <img src="img/dbz-vegeta.jpeg" alt="" class="hero dbz-hero">
+                <img src="img/dbz-piccolo.jpeg" alt="" class="hero dbz-hero">
+                <img src="img/dbz-frieza.jpeg" alt="" class="hero dbz-hero">
+            </div>
         </div>
 
         <div class="battleground">
             
-            <button>Start Game</button>
+            <button type="button" class="btn-start-game">Start Game</button>
         
             <div class="tableboard">
                 <div data-tablesquare="0" class="tablesquare""></div>
@@ -41,10 +52,22 @@
 
         </div>
 
-        <div class="team-two-selection">
+        <div class="team-selection">
 
             <div class="player-div">
-                <input type="text" class="player-name player-two">
+                <label for="player-two-name">Player 2 Name:</label>
+                <input type="text" class="player-name player-two" id="player-two-name">
+            </div>
+
+            <div class="hero-chosen hero-player-two">
+                <img src="" alt="" class="player-two-hero-spot">
+            </div>
+
+            <div class="team-images">
+                <img src="img/other-were.jpeg" alt="" class="hero non-dbz-hero">
+                <img src="img/other-drag.jpeg" alt="" class="hero non-dbz-hero">
+                <img src="img/other-mickdonald.jpeg" alt="" class="hero non-dbz-hero">
+                <img src="img/other-slifer.jpeg" alt="" class="hero non-dbz-hero">
             </div>
 
         </div>
