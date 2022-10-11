@@ -1,8 +1,25 @@
-    *{
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Archivo+Narrow&family=Bangers&family=Barlow+Condensed&family=Bebas+Neue&family=Fjalla+One&family=Julius+Sans+One&family=Luckiest+Guy&family=Macondo&family=Noto+Sans:wght@300;400&display=swap');
+
+html{
+    font-family: 'Bangers', cursive;
+}
+
+input {
+    font-family: inherit;
+    text-align: center;
+    font-weight: bold;
+}
+
+button {
+    font-family: inherit;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 .container{
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -14,7 +31,13 @@
 .battleground {
     display: grid;
     grid-template-rows: 1fr 6fr 1fr;
-    
+
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tableboard div{
@@ -43,7 +66,7 @@
     width: 12rem;
     height: auto;
     box-shadow: 10px 10px 8px 8px white inset;
-
+    border-radius: 20px;
 }
 
 .team-images > img:hover {
@@ -79,10 +102,15 @@
     align-items:stretch;
 }
 
-.player-name{
+input {
     font-size: 2rem;
 }
 
 label {
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+
+.btn-start-game {
+    width: 15rem;
+    height: 5rem;
 }

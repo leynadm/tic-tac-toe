@@ -70,10 +70,19 @@ var gameBoard = {
     },
 
     cleanGameBoard: function(){
-        
+        gameBoard.cacheDom().battleResultBanner.textContent = "";
+        gameBoard.gameState = [null,null,null,null,null,null,null,null,null];
+        this.cacheDom().boardSquares.forEach(element => {
+            element.textContent = '';
+        });
+    
     },
 
     startGame: function(){
+
+        if(gameBoard.gameStartedStatus){
+            gameBoard.cleanGameBoard();
+        }
 
         (function (){
             let playerOneName = gameBoard.cacheDom().playerOneInput.value;
@@ -87,6 +96,7 @@ var gameBoard = {
             gameBoard.gameStartedStatus = true;
 
         })();
+
     },
 
     checkCurrentState: function(XorO){
@@ -130,8 +140,6 @@ var gameBoard = {
 
     declareWinner: function() {
         gameBoard.cacheDom().battleResultBanner.textContent = "Winner!";
-        console.log('winner');
-
     },
 
     selectHero: function() {
