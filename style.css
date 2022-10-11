@@ -42,10 +42,11 @@ button {
 
 .tableboard div{
     display: flex;
-    border: black 1px solid;
+    border:white 10px solid;
     align-items: center;
     justify-content: center;
     font-size: 10rem;
+    color: aliceblue;
 }
 
 .battleground .tableboard {
@@ -58,7 +59,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .team-images > img {
@@ -113,4 +114,8 @@ label {
 .btn-start-game {
     width: 15rem;
     height: 5rem;
+}
+
+.tablesquare {
+    background-color: cadetblue;
 }

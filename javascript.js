@@ -62,6 +62,8 @@ var gameBoard = {
             XorO = "O";           
             gameBoard.playerOneTurn = true;
         }
+        console.log("logging player one turn");
+        console.log(gameBoard.playerOneTurn);
 
         let playerInput = XorO;
         gameBoard.gameState[squareSelected] = XorO;
@@ -71,6 +73,7 @@ var gameBoard = {
 
     cleanGameBoard: function(){
         gameBoard.cacheDom().battleResultBanner.textContent = "";
+        gameBoard.playerOneTurn = true;
         gameBoard.gameState = [null,null,null,null,null,null,null,null,null];
         this.cacheDom().boardSquares.forEach(element => {
             element.textContent = '';
@@ -139,7 +142,16 @@ var gameBoard = {
     },
 
     declareWinner: function() {
-        gameBoard.cacheDom().battleResultBanner.textContent = "Winner!";
+        let winningPlayer;
+        console.log(gameBoard.cacheDom().playerOneInput.value);
+
+        if(!gameBoard.playerOneTurn){
+            winningPlayer = gameBoard.cacheDom().playerOneInput.value;
+        } else{
+            winningPlayer = gameBoard.cacheDom().playerTwoInput.value;
+        }
+
+        gameBoard.cacheDom().battleResultBanner.textContent = "Congratulations to " + winningPlayer + "! You won!";
     },
 
     selectHero: function() {
