@@ -148,6 +148,7 @@ var gameBoard = {
             case winner_series_08:
             case winner_series_09:
                 gameBoard.declareWinner();
+                return
                 break;
         }
 
