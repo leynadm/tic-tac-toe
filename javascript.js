@@ -4,7 +4,6 @@ var gameBoard = {
     playerOneTurn:true,
     gameStartedStatus:false,
     gamesPlayed:0,
-
     init: function(){
         this.cacheDom();
         this.bindEvents();
@@ -47,6 +46,7 @@ var gameBoard = {
         let squareSelectedValue = this.textContent;
 
         if(gameBoard.gameStartedStatus!=true){
+            alert("Each player should choose a name and hero first!");
             return;
         }
 
@@ -150,7 +150,6 @@ var gameBoard = {
         } else{
             winningPlayer = gameBoard.cacheDom().playerTwoInput.value;
         }
-
         gameBoard.cacheDom().battleResultBanner.textContent = "Congratulations to " + winningPlayer + "! You won!";
     },
 

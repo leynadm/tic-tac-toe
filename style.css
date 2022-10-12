@@ -10,10 +10,6 @@ input {
     font-weight: bold;
 }
 
-button {
-    font-family: inherit;
-}
-
 *{
     box-sizing: border-box;
     padding: 0;
@@ -26,12 +22,15 @@ button {
     width: 100vw;
     height: 100vh;
     max-width: 100%;
+    background-color: #e5e5f7;
+    background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 10px 10px;
 }
+
 
 .battleground {
     display: grid;
-    grid-template-rows: 1fr 6fr 1fr;
-
+    grid-template-rows: 0.86fr 6fr 1fr;
 }
 
 .header{
@@ -42,7 +41,6 @@ button {
 
 .tableboard div{
     display: flex;
-    border:white 10px solid;
     align-items: center;
     justify-content: center;
     font-size: 10rem;
@@ -67,12 +65,21 @@ button {
     width: 12rem;
     height: auto;
     box-shadow: 10px 10px 8px 8px white inset;
-    border-radius: 20px;
+    border-radius: 100px;
+    box-shadow: 0 0 10px 8px gray;
 }
 
 .team-images > img:hover {
 
-    border: black 2px solid ;
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 5px 8px #ffc600;
+    transition: all 0.2s;
+}
+
+.main-hero{
+
+    border-radius: 250px;
 }
 
 .team-images {
@@ -101,21 +108,109 @@ button {
     display: flex;
     justify-content: center;
     align-items:stretch;
+    border-radius: 50%;
+    width: 18rem;
+    height: 18rem;
+    box-shadow: 0 0 50px 10px blue, 0 0 5px 5px #b400ff, 0 0 14px 9px #ff00d4;
+    margin: 4rem;
+    -webkit-animation: glowing 1s ease-in-out infinite alternate;
+    -moz-animation: glowing 1s ease-in-out infinite alternate;
+    animation: glowing 1s ease-in-out infinite alternate;    
 }
+
+@-webkit-keyframes glowing {
+    from {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f0f, 0 0 40px #0ff, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+      box-shadow: 0 0 30px yellow, 0 0 40px orange, 0 0 50px orangered, 0 0 60px red, 0 0 70px yellow, 0 0 80px yellowgreen, 0 0 90px red;
+    }
+  }
 
 input {
     font-size: 2rem;
+    outline: 0;
+    border-width: 0 0 2px 2px;
+    background: inherit;
 }
 
 label {
     font-size: 1.5rem;
 }
 
+/*
 .btn-start-game {
-    width: 15rem;
-    height: 5rem;
-}
+    background: orangered;
+    color: yellow;
+    font-size: 2rem;
+    border: 0;
+    width: 14rem;
+    height: 3rem;
+}*/
 
 .tablesquare {
-    background-color: cadetblue;
+    background-color:orange;
+    border-radius: 0.5rem;
+    border: 1px white solid;
+}
+
+.btn-start-game {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: orange;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  height: 50px;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 14px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.btn-start-game:hover {
+  background-color: red;
+  box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.btn-start-game:hover:after {
+  opacity: .5;
+}
+
+.btn-start-game:active {
+  box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.btn-start-game:active:after {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .btn-start-game {
+    padding: 14px 22px;
+    width: 176px;
+  }
 }
