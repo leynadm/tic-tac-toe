@@ -45,8 +45,11 @@ var gameBoard = {
         let squareSelected = this.dataset.tablesquare;
         let squareSelectedValue = this.textContent;
 
-        if(gameBoard.gameStartedStatus!=true){
-            alert("Each player should choose a name and hero first!");
+        if(gameBoard.gameStartedStatus!=true && gameBoard.gamesPlayed == 0){
+            alert("You need to start the game after selecting a name and hero!");
+            return;
+        } else if (gameBoard.gameStartedStatus!=true && gameBoard.gamesPlayed >0){
+            alert("Start a new game in order to play again!");
             return;
         }
 
@@ -83,8 +86,14 @@ var gameBoard = {
 
     startGame: function(){
 
-        if(gameBoard.gameStartedStatus){
+        if(gameBoard.gamesPlayed>0){
             gameBoard.cleanGameBoard();
+        }
+
+
+        if(gameBoard.cacheDom().heroPlayerOne.getAttribute('src')== '' || gameBoard.cacheDom().heroPlayerTwo.getAttribute('src')==''){
+            alert('Both players need to select a hero!')
+            return;
         }
 
         (function (){
@@ -97,6 +106,8 @@ var gameBoard = {
             }
             
             gameBoard.gameStartedStatus = true;
+
+            gameBoard.cacheDom().startGameBtn.textContent = "Game in progress...";
 
         })();
 
@@ -150,7 +161,14 @@ var gameBoard = {
         } else{
             winningPlayer = gameBoard.cacheDom().playerTwoInput.value;
         }
+
         gameBoard.cacheDom().battleResultBanner.textContent = "Congratulations to " + winningPlayer + "! You won!";
+        
+        gameBoard.cacheDom().startGameBtn.textContent = "Start Game";
+
+        gameBoard.gameStartedStatus = false;
+        gameBoard.gamesPlayed = gameBoard.gamesPlayed +1;
+
     },
 
     selectHero: function() {

@@ -10,13 +10,25 @@
 </head>
 <body>
     <div class="container">
-        
-        <div class="team-selection">
+
+        <div class="header">
 
             <div class="player-div">
                 <label for="player-one-name">Player 1 Name:</label>
                 <input type="text" class="player-name player-one" id="player-one-name">
             </div>
+
+            <button type="button" class="btn-start-game">Start Game</button>
+        
+            <div class="player-div">
+                <label for="player-two-name">Player 2 Name:</label>
+                <input type="text" class="player-name player-two" id="player-two-name">
+            </div>
+
+        </div>
+
+
+        <div class="team-selection">
 
             <div class="hero-chosen hero-player-one">
                 <img src="" alt="" class="main-hero player-one-hero-spot">
@@ -31,21 +43,17 @@
         </div>
 
         <div class="battleground">
-            
-            <div class="header">
-                <button type="button" class="btn-start-game">Start Game</button>
-            </div>
         
             <div class="tableboard">
-                <div data-tablesquare="0" class="tablesquare""></div>
-                <div data-tablesquare="1" class="tablesquare""></div>
-                <div data-tablesquare="2" class="tablesquare""></div>
-                <div data-tablesquare="3" class="tablesquare""></div>
-                <div data-tablesquare="4" class="tablesquare""></div>
-                <div data-tablesquare="5" class="tablesquare""></div>
-                <div data-tablesquare="6" class="tablesquare""></div>
-                <div data-tablesquare="7" class="tablesquare""></div>
-                <div data-tablesquare="8" class="tablesquare""></div>
+                <div data-tablesquare="0" class="tablesquare ts-0""></div>
+                <div data-tablesquare="1" class="tablesquare ts-1""></div>
+                <div data-tablesquare="2" class="tablesquare ts-2""></div>
+                <div data-tablesquare="3" class="tablesquare ts-3""></div>
+                <div data-tablesquare="4" class="tablesquare ts-4""></div>
+                <div data-tablesquare="5" class="tablesquare ts-5""></div>
+                <div data-tablesquare="6" class="tablesquare ts-6""></div>
+                <div data-tablesquare="7" class="tablesquare ts-7""></div>
+                <div data-tablesquare="8" class="tablesquare ts-8""></div>
             </div>
 
             <div class="battle-result">
@@ -55,11 +63,6 @@
         </div>
 
         <div class="team-selection">
-
-            <div class="player-div">
-                <label for="player-two-name">Player 2 Name:</label>
-                <input type="text" class="player-name player-two" id="player-two-name">
-            </div>
 
             <div class="hero-chosen hero-player-two">
                 <img src="" alt="" class="main-hero player-two-hero-spot">
