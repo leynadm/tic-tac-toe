@@ -129,7 +129,7 @@ var gameBoard = {
         let winner_series_03 = square_06+square_07+square_08;
         let winner_series_04 = square_02+square_05+square_08;
         let winner_series_05 = square_01+square_04+square_07;
-        let winner_series_06 = square_00+square_04+square_05;
+        let winner_series_06 = square_00+square_04+square_08;
         let winner_series_07 = square_02+square_04+square_06;
         let winner_series_08 = square_03+square_04+square_05;
         let winner_series_09 = square_00+square_04+square_08;
@@ -150,6 +150,17 @@ var gameBoard = {
                 gameBoard.declareWinner();
                 break;
         }
+
+        function otherThanNull(arr) {
+            return arr.every(el => el !== null);
+        }
+
+        if(otherThanNull(gameBoard.gameState)){
+            gameBoard.cacheDom().battleResultBanner.textContent = "It's a draw...! Awkward...";    
+            gameBoard.gameStartedStatus = false;
+            gameBoard.gamesPlayed = gameBoard.gamesPlayed +1;   
+        }
+
     },
 
     declareWinner: function() {
